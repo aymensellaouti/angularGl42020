@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gl42020"
+    }
+  },
+  "defaultProject": "gl42020",
+  "cli": {
+    "analytics": false
+  }
 }

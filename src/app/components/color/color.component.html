@@ -1,0 +1,12 @@
+<div [style.backgroundColor]="color">Bonjour</div>
+
+<input
+  #myInput
+  (change)="changeColor(myInput.value)"
+  type="text"
+  class="form-control"
+/>
+
+<input [(ngModel)]="color" type="color" class="form-control" />
+
+<button (click)="reset()" class="btn btn-primary">Reset Color</button>

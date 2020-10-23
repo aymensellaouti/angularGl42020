@@ -1,0 +1,8 @@
+<p [hidden]="isHidden" (click)="sayHello()" [style.color]="color">
+  first works!
+</p>
+<input type="text" #monInput />
+<button class="btn btn-primary" (mouseenter)="hideShow(monInput.value)">
+  show Hide
+</button>
+<app-second></app-second>

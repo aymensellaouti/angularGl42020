@@ -1,0 +1,11 @@
+<span (click)="selectItem()">
+  <img
+    src="assets/images/{{ personne.path }}"
+    width="50px"
+    heigth="50px"
+    class="rounded-circle"
+    alt="{{ personne.name }}"
+  />
+  {{ personne.name | slice: 2:4 | uppercase }}
+  {{ personne.firstname | titlecase }}
+</span>

@@ -1,0 +1,19 @@
+<p
+  (click)="allume = !allume"
+  [ngClass]="{
+    isAllume: allume
+  }"
+>
+  ngclass works!
+</p>
+defaultColor : {{ defaultColor }}
+<p appHighlight>Test Directive</p>
+<p appHighlight [in]="'red'" [out]="'yellow'">Test Directive</p>
+
+<input
+  [ngStyle]="{ fontSize: '12px' }"
+  type="text"
+  [defaultcolor]="'gold'"
+  appRainbow
+  class="form-control"
+/>

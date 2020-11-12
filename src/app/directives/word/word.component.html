@@ -1,0 +1,48 @@
+<p
+  [ngStyle]="{
+    color: color,
+    fontSize: size + 'px',
+    fontFamily: font,
+    textAlign: align
+  }"
+>
+  word works!
+</p>
+
+<div class="row">
+  <div class="col">
+    <input [(ngModel)]="color" type="color" class="form-control" />
+  </div>
+  <div class="col">
+    <input [(ngModel)]="size" type="number" class="form-control" />
+  </div>
+  <div class="col">
+    <select [(ngModel)]="font" class="form-control">
+      <option value="garamond">Garamond</option>
+      <option value="arial">Arial</option>
+      <option value="verdana">Verdana</option>
+    </select>
+  </div>
+  <div class="col">
+    <i
+      class="fa fa-align-left fa-3x"
+      (click)="changeAlignement('left')"
+      aria-hidden="true"
+    ></i>
+    <i
+      class="fa fa-align-right fa-3x"
+      (click)="changeAlignement('right')"
+      aria-hidden="true"
+    ></i>
+    <i
+      class="fa fa-align-center fa-3x"
+      (click)="changeAlignement('center')"
+      aria-hidden="true"
+    ></i>
+    <i
+      class="fa fa-align-justify fa-3x"
+      (click)="changeAlignement('justify')"
+      aria-hidden="true"
+    ></i>
+  </div>
+</div>

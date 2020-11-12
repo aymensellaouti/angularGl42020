@@ -11,7 +11,18 @@ import { TwoComponent } from './components/two/two.component';
 import { CardComponent } from './components/card/card.component';
 import { PereComponent } from './components/pere/pere.component';
 import { FilsComponent } from './components/fils/fils.component';
-
+import { CvComponent } from './cv/pages/cv/cv.component';
+import { DetailComponent } from './cv/components/detail/detail.component';
+import { ItemComponent } from './cv/components/item/item.component';
+import { ListComponent } from './cv/components/list/list.component';
+import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
+import { WordComponent } from './directives/word/word.component';
+import { NgclassComponent } from './directives/ngclass/ngclass.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowDirective } from './directives/rainbow.directive';
+import { StructurelleComponent } from './components/structurelle/structurelle.component';
+import { RandomStringPipe } from './pipes/random-string.pipe';
+import { LoggerService } from './services/logger.service';
 
 @NgModule({
   declarations: [
@@ -22,14 +33,21 @@ import { FilsComponent } from './components/fils/fils.component';
     TwoComponent,
     CardComponent,
     PereComponent,
-    FilsComponent
+    FilsComponent,
+    CvComponent,
+    DetailComponent,
+    ItemComponent,
+    ListComponent,
+    NgstyleComponent,
+    WordComponent,
+    NgclassComponent,
+    HighlightDirective,
+    RainbowDirective,
+    StructurelleComponent,
+    RandomStringPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

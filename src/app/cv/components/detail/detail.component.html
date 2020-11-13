@@ -1,13 +1,14 @@
-<div
-  *ngIf="personne"
-  class="card-container">
+<div *ngIf="personne" class="card-container">
   <div class="card">
     <div class="front">
       <div class="cover">
         <img src="assets/images/rotating_card_thumb2.png" />
       </div>
       <div class="user">
-        <img class="img-circle" src="assets/images/{{ personne?.path }}" />
+        <img
+          class="img-circle"
+          src="assets/images/{{ personne?.path | defaultImage }}"
+        />
       </div>
       <div class="content">
         <div class="main">
@@ -26,16 +27,13 @@
     <!-- end front panel -->
     <div class="back">
       <div class="header">
-        <h5 class="motto">
-          "To be or not to be, this is my awesome motto!"
-        </h5>
+        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
       </div>
       <div class="content">
         <div class="main">
           <h4 class="text-center">Job Description</h4>
           <p class="text-center">
-            Web design, Adobe Photoshop, HTML5, CSS3, Corel and many
-            others...
+            Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...
           </p>
 
           <div class="stats-container">

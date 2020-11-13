@@ -1,6 +1,6 @@
 <span (click)="selectItem()">
   <img
-    src="assets/images/{{ personne.path }}"
+    src="assets/images/{{ personne.path|defaultImage }}"
     width="50px"
     heigth="50px"
     class="rounded-circle"

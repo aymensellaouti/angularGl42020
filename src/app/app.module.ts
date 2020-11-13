@@ -23,6 +23,8 @@ import { RainbowDirective } from './directives/rainbow.directive';
 import { StructurelleComponent } from './components/structurelle/structurelle.component';
 import { RandomStringPipe } from './pipes/random-string.pipe';
 import { LoggerService } from './services/logger.service';
+import { DefaultImagePipe } from './pipes/default-image.pipe';
+import { TodoComponent } from './todo/pages/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { LoggerService } from './services/logger.service';
     RainbowDirective,
     StructurelleComponent,
     RandomStringPipe,
+    DefaultImagePipe,
+    TodoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

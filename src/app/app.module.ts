@@ -25,6 +25,7 @@ import { RandomStringPipe } from './pipes/random-string.pipe';
 import { LoggerService } from './services/logger.service';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
 import { TodoComponent } from './todo/pages/todo/todo.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { TodoComponent } from './todo/pages/todo/todo.component';
     RandomStringPipe,
     DefaultImagePipe,
     TodoComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

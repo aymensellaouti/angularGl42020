@@ -26,6 +26,7 @@ import { LoggerService } from './services/logger.service';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
 import { TodoComponent } from './todo/pages/todo/todo.component';
 import { HeaderComponent } from './components/header/header.component';
+import { EmbaucheComponent } from './embauche/components/embauche/embauche.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { HeaderComponent } from './components/header/header.component';
     DefaultImagePipe,
     TodoComponent,
     HeaderComponent,
+    EmbaucheComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

@@ -1,0 +1,38 @@
+<form #loginForm="ngForm">
+  email:
+  <input
+    email
+    type="email"
+    class="form-control"
+    ngModel
+    name="email"
+    required
+    #emailInput="ngModel"
+  />
+  <div
+    *ngIf="emailInput.invalid && emailInput.dirty"
+    class="alert alert-danger"
+  >
+    L'email est obligatoire et il doit etre valide
+  </div>
+  password:
+  <input
+    type="password"
+    minlength="4"
+    class="form-control"
+    name="password"
+    ngModel
+    required
+    #pwdInput="ngModel"
+  />
+  <div *ngIf="pwdInput.invalid && pwdInput.dirty" class="alert alert-danger">
+    Le password est obligatoire et il doit avoir au moins caractères
+  </div>
+</form>
+<button
+  (click)="login(loginForm)"
+  [disabled]="loginForm.invalid"
+  class="btn btn-success"
+>
+  Login
+</button>

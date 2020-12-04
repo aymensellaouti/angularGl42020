@@ -1,11 +1,12 @@
 <div class="row">
   <div class="col-4">
-    <app-list
-      (forwardSelectedPersonne)="catchSelectedPersonne($event)"
-    ></app-list>
+    <div *ngIf="nbClick" class="alert alert-success">
+      Nombre de personne sélectionnées : {{ nbClick }}
+    </div>
+    <app-list></app-list>
   </div>
   <div class="col-8">
-    <app-detail [personne]="selectedPersonne"></app-detail>
+    <app-detail></app-detail>
   </div>
 </div>
 <div class="row">

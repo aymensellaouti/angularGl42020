@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-observable-test',
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ObservableTestComponent implements OnInit {
   constructor() {}
   paths = ['404.png', 'as.jpg', 'cv.png', 'tim_logo.png'];
-  observable: Observable;
+  observable: Observable<number>;
   imageObservable: Observable<string>;
   ngOnInit(): void {
     this.observable = new Observable((observer) => {
@@ -32,6 +33,12 @@ export class ObservableTestComponent implements OnInit {
       (erreur) => console.log(erreur),
       () => console.log('flux finalisé')
     );
+    this.observable
+      .pipe(
+        map((x) => x * 3),
+        filter((x) => x % 2 === 0)
+      )
+      .subscribe((data) => console.log('piped data', data));
     this.imageObservable = new Observable<string>((observer) => {
       let indice = this.paths.length - 1;
       setInterval(() => {

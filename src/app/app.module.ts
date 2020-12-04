@@ -35,6 +35,7 @@ import { NF404Component } from './nf404/nf404.component';
 import { TestNestComponent } from './test-nest/test-nest.component';
 import { TestFormComponent } from './test-form/test-form.component';
 import { ObservableTestComponent } from './observable-test/observable-test.component';
+import { TestHttpComponent } from './components/test-http/test-http.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { ObservableTestComponent } from './observable-test/observable-test.compo
     TestNestComponent,
     TestFormComponent,
     ObservableTestComponent,
+    TestHttpComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

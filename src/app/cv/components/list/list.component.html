@@ -1,15 +1,12 @@
 <ol class="list-group">
   <li
-    *ngFor= "let itemPersonne of personnes; let color = odd"
+    *ngFor="let itemPersonne of personnes; let color = odd"
     class="list-group-item"
-    [ngClass]= "{
+    [ngClass]="{
       'list-group-item-danger': color,
       'list-group-item-warning': !color
     }"
-    >
-    <app-item
-      (sendPersonne)="forwardPersonne($event)"
-      [personne]="itemPersonne"
-    ></app-item>
+  >
+    <app-item [personne]="itemPersonne"></app-item>
   </li>
 </ol>

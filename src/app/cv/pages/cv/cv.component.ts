@@ -1,24 +1,22 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from 'src/app/todo/services/todo.service';
-import { Personne } from '../../model/personne';
+import { distinctUntilChanged } from 'rxjs/operators';
+import { CvService } from '../../services/cv.service';
 
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
-  styleUrls: ['./cv.component.css']
+  styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-  selectedPersonne: Personne;
-  constructor(
-    private todoService: TodoService
-  ) { }
+  /*   selectedPersonne: Personne; */
+  nbClick = 0;
+  constructor(private cvService: CvService) {}
 
   ngOnInit(): void {
+    this.cvService.selectPersonneSubject.pipe(
+      distinctUntilChanged()
+    ).subscribe(
+      (personne) => this.nbClick++
+    );
   }
-  catchSelectedPersonne(forwardedPersonne: Personne) {
-    this.selectedPersonne = forwardedPersonne;
-    this.todoService.logger();
-  }
-
 }

@@ -1,5 +1,7 @@
 /* You can add global styles to this file,
 and also import other style files */
-@import '~bootstrap';
-@import '~font-awesome';
-@import 'assets/css/rotating-card.css';
+@import "~bootstrap";
+@import "~font-awesome";
+@import "assets/css/rotating-card.css";
+@import "~ngx-toastr/toastr";
+@import "assets/css/toaster.css";

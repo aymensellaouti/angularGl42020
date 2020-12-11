@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { distinctUntilChanged } from 'rxjs/operators';
 import { Personne } from '../../model/personne';
 import { CvService } from '../../services/cv.service';
@@ -13,7 +14,8 @@ export class DetailComponent implements OnInit {
   @Input() personne: Personne = null;
   constructor(
     private embaucheService: EmbaucheService,
-    private cvService: CvService
+    private cvService: CvService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -25,5 +27,8 @@ export class DetailComponent implements OnInit {
     if (!this.embaucheService.embaucher(this.personne)) {
       alert(`${this.personne.name} est déjà embauché`);
     }
+  }
+  details() {
+    this.router.navigate(['cv', this.personne.id]);
   }
 }

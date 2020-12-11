@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
@@ -36,6 +37,9 @@ import { TestNestComponent } from './test-nest/test-nest.component';
 import { TestFormComponent } from './test-form/test-form.component';
 import { ObservableTestComponent } from './observable-test/observable-test.component';
 import { TestHttpComponent } from './components/test-http/test-http.component';
+import { ToastrModule } from 'ngx-toastr';
+import { DetailPersonneComponent } from './cv/pages/detail-personne/detail-personne.component';
+import { AddPersonneComponent } from './cv/pages/add-personne/add-personne.component';
 
 @NgModule({
   declarations: [
@@ -70,8 +74,17 @@ import { TestHttpComponent } from './components/test-http/test-http.component';
     TestFormComponent,
     ObservableTestComponent,
     TestHttpComponent,
+    DetailPersonneComponent,
+    AddPersonneComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

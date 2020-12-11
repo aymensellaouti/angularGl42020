@@ -1,0 +1,53 @@
+<div class="d-flex justify-content-center" *ngIf="personne">
+  <div class="col-lg-8 push-lg-4">
+    <div class="tab-content p-b-3">
+      <div class="tab-pane active" id="profile">
+        <h4 class="m-y-2">Cv {{ personne.firstname }} {{ personne.name }}</h4>
+        <div class="d-flex justify-content-center">
+          <img
+            width="150px"
+            height="150px"
+            class="rounded-circle align-content-center"
+            src="assets/images/{{ personne.path | defaultImage }}"
+            alt=""
+          />
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="m-t-2">
+              <span class="fa fa-clock-o ion-clock pull-xs-right"></span>
+              Informations
+            </h4>
+            <table class="table table-hover table-striped">
+              <tbody>
+                <tr>
+                  <td><strong>Name</strong> {{ personne?.name }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Firstname</strong> {{ personne?.firstname }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Job</strong> {{ personne?.job }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Age</strong> {{ personne?.age }}</td>
+                </tr>
+                <tr>
+                  <td><strong>Cin</strong> {{ personne?.cin }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+              <button
+                (click)="deletePersonne()"
+                class="btn btn-danger">
+                Supprimer
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

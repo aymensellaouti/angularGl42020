@@ -7,16 +7,22 @@ import { CvComponent } from './cv/pages/cv/cv.component';
 import { DetailPersonneComponent } from './cv/pages/detail-personne/detail-personne.component';
 import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
 import { FrontComponent } from './front/front.component';
+import { LoginGuard } from './guards/login.guard';
 import { NF404Component } from './nf404/nf404.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TodoComponent } from './todo/pages/todo/todo.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'cv', pathMatch: 'full' },
   {
     path: 'cv',
     children: [
       { path: '', component: CvComponent },
-      { path: 'add', component: AddPersonneComponent },
+      {
+        path: 'add',
+        component: AddPersonneComponent,
+        canActivate: [LoginGuard],
+      },
       { path: ':id', component: DetailPersonneComponent },
     ],
   },

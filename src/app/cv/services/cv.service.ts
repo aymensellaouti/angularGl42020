@@ -44,12 +44,11 @@ export class CvService {
     return this.http.get<Personne>(PERSONNE_API + id);
   }
 
-  deletePersonneByID(id: number): Observable {
-    // Récupération du Token
-    const token = localStorage.getItem('token');
-    //2 méthodes ou à travers les headers ou les params
-    /* const params = new HttpParams().set('access_token', token); */
-    const headers = new HttpHeaders().set('Authorization', token);
-    return this.http.delete(PERSONNE_API + id, {headers});
+  deletePersonneByID(id: number): Observable<any> {
+    return this.http.delete<any>(PERSONNE_API + id);
+  }
+
+  addPersonne(personne: Personne): Observable<Personne> {
+    return this.http.post<Personne>(PERSONNE_API, personne);
   }
 }

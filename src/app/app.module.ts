@@ -40,6 +40,8 @@ import { TestHttpComponent } from './components/test-http/test-http.component';
 import { ToastrModule } from 'ngx-toastr';
 import { DetailPersonneComponent } from './cv/pages/detail-personne/detail-personne.component';
 import { AddPersonneComponent } from './cv/pages/add-personne/add-personne.component';
+import { CvService } from './cv/services/cv.service';
+import { AuthHttpInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -85,7 +87,7 @@ import { AddPersonneComponent } from './cv/pages/add-personne/add-personne.compo
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [AuthHttpInterceptor],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

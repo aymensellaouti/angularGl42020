@@ -1,1 +1,64 @@
-<p>add-personne works!</p>
+<form #formumaire="ngForm">
+  <label for="name">Name</label>
+  <input
+    required
+    id="name"
+    type="text"
+    ngModel
+    name="name"
+    class="form-control"
+  />
+
+  <label for="firstname">Firstname</label>
+  <input
+    required
+    id="firstname"
+    type="text"
+    ngModel
+    name="firstname"
+    class="form-control"
+  />
+
+  <label for="job">Job</label>
+  <input
+    required
+    id="job"
+    type="text"
+    ngModel
+    name="job"
+    class="form-control"
+  />
+
+  <label for="age">Age</label>
+  <input
+    required
+    pattern="[0-1]?\d{1,2}"
+    id="age"
+    type="number"
+    ngModel
+    name="age"
+    class="form-control"
+  />
+
+  <label for="cin">Cin</label>
+  <input
+    required
+    id="cin"
+    type="number"
+    ngModel
+    name="cin"
+    class="form-control"
+  />
+
+  <label for="path">Path</label>
+  <input id="path" type="text" ngModel name="path" class="form-control" />
+
+  <button
+    [disabled]="formumaire.invalid"
+    (click)="addPersonne(formumaire)"
+    class="btn btn-primary"
+  >
+    Envoyer
+  </button>
+</form>
+
